@@ -34,18 +34,18 @@ This project provides a high-performance image and video upscaler using [RealESR
 - Official guide: https://developer.nvidia.com/tensorrt/download
 - Or via pip:
 
-\`\`\`bash
+```bash
 python3 -m pip install --upgrade pip
 python3 -m pip install wheel
 python3 -m pip install --upgrade tensorrt
-\`\`\`
+```
 
 Verify:
 
-\`\`\`python
+```python
 >>> import tensorrt
 >>> print(tensorrt.__version__)
-\`\`\`
+```
 
 📚 Full guide: https://docs.nvidia.com/deeplearning/tensorrt/latest/installing-tensorrt/installing.html
 
@@ -53,9 +53,9 @@ Verify:
 
 ### 2. Install `basicsr`
 
-\`\`\`bash
+```bash
 pip install basicsr==1.4.2 --index-url https://pypi.org/simple
-\`\`\`
+```
 
 ---
 
@@ -66,23 +66,23 @@ pip install basicsr==1.4.2 --index-url https://pypi.org/simple
 
 Place in:
 
-\`\`\`
+```
 ./src/models/pretrained_models/
-\`\`\`
+```
 
 ---
 
 ### 4. Install `torch2trt`
 
-\`\`\`bash
+```bash
 git clone https://github.com/NVIDIA-AI-IOT/torch2trt
 cd torch2trt
 python setup.py install --plugins
-\`\`\`
+```
 
-If you see \`NvInfer.h: No such file or directory\`, update \`setup.py\`:
+If you see `NvInfer.h: No such file or directory`, update `setup.py`:
 
-\`\`\`python
+```python
 include_dirs=[
     trt_inc_dir(),
     '/usr/local/tensorrt/include'
@@ -91,7 +91,7 @@ library_dirs=[
     trt_lib_dir(),
     '/usr/local/tensorrt/targets/x86_64-linux-gnu/lib'
 ]
-\`\`\`
+```
 
 ---
 
@@ -99,33 +99,33 @@ library_dirs=[
 
 ### Default Conversion (2x, 512x512)
 
-\`\`\`bash
+```bash
 python convert_to_trt.py
-\`\`\`
+```
 
 ### Custom Size
 
-\`\`\`bash
+```bash
 python convert_to_trt.py --height 480 --width 273
-\`\`\`
+```
 
 ### Use 4x Model
 
-\`\`\`bash
+```bash
 python convert_to_trt.py --pretrained_model 4X
-\`\`\`
+```
 
 ### Custom Output Directory
 
-\`\`\`bash
+```bash
 python convert_to_trt.py --model_output_directory ./my_outputs
-\`\`\`
+```
 
 ### 🧪 Full Example
 
-\`\`\`bash
+```bash
 python convert_to_trt.py --height 480 --width 273 --pretrained_model 4X --model_output_directory ./my_outputs
-\`\`\`
+```
 
 ---
 
@@ -133,10 +133,10 @@ python convert_to_trt.py --height 480 --width 273 --pretrained_model 4X --model_
 
 Process images with different scaling factors:
 
-\`\`\`bash
+```bash
 python inference_image.py --input src/samples/input.jpeg --output src/samples/output_x2.png --scale 2
 python inference_image.py --input src/samples/input.jpeg --output src/samples/output_x4.png --scale 4
-\`\`\`
+```
 
 ---
 
@@ -144,10 +144,10 @@ python inference_image.py --input src/samples/input.jpeg --output src/samples/ou
 
 Process videos with different scaling factors:
 
-\`\`\`bash
+```bash
 python inference_video.py --input src/samples/input.mp4 --output src/samples/output_x2.mp4 --scale 2
 python inference_video.py --input src/samples/input.mp4 --output src/samples/output_x4.mp4 --scale 4
-\`\`\`
+```
 
 ---
 
@@ -156,36 +156,36 @@ python inference_video.py --input src/samples/input.mp4 --output src/samples/out
 ### Image Super-Resolution
 
 **Input:**
-\`\`\`
+```
 ./src/samples/lora1_sample_512.jpeg
-\`\`\`
+```
 
 **Outputs:**
-\`\`\`
+```
 ./src/samples/lora1_sample_512_x2.png
 ./src/samples/lora1_sample_512_x4.png
-\`\`\`
+```
 
 ---
 
 ### Video Super-Resolution
 
 **Input:**
-\`\`\`
+```
 ./src/samples/sample.mp4
-\`\`\`
+```
 
 **Outputs:**
-\`\`\`
+```
 ./src/samples/sample_x2.mp4
 ./src/samples/sample_x4.mp4
-\`\`\`
+```
 
 ---
 
 ## 📁 Folder Structure
 
-\`\`\`
+```
 src/
 ├── models/
 │   └── pretrained_models/
@@ -198,7 +198,7 @@ src/
 ├── convert_to_trt.py
 ├── inference_image.py
 ├── inference_video.py
-\`\`\`
+```
 
 ---
 
