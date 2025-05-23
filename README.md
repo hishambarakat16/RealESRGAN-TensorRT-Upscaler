@@ -6,11 +6,22 @@ This project provides a high-performance image and video upscaler using [RealESR
 
 ## ✅ Features
 
-- ✅ TensorRT-accelerated RealESRGAN upscaler
-- ✅ Support for both x2 and x4 pretrained models
-- ✅ Adjustable output dimensions (height and width)
-- ✅ Easy conversion of models to TensorRT format
-- ✅ Image and video upscaling scripts provided
+### 🚀 Performance
+- ⚡ Up to **3–5× faster** inference using TensorRT vs standard PyTorch
+
+### 🖼️ Image & Video Upscaling
+- 🔧 Supports **2x** and **4x** RealESRGAN models
+- 📐 Customizable **output dimensions** (height & width)
+- 🖼️ Includes ready-to-use scripts for **image** and **video** processing
+
+### 🛠️ Model Conversion
+- 🔄 Simple conversion from PyTorch to TensorRT
+- 📦 **Static TensorRT engine**: optimized for fixed input sizes  
+  ↪️ *To change input size, re-export the engine*
+
+### 🧪 In Development (Upcoming Features)
+- 🔁 **Dynamic TensorRT**: handle varying input sizes without re-export
+- 🔊 **Audio transfer** support: for full video enhancement pipelines
 
 ---
 
@@ -152,36 +163,34 @@ python inference_video.py --input src/samples/input.mp4 --output src/samples/out
 ---
 
 ## 🖼️ Example Results
+### 🖼️ Image Super-Resolution Results
 
-### Image Super-Resolution
 
-**Input:**
-```
-./src/samples/lora1_sample_512.jpeg
-```
 
-**Outputs:**
-```
-./src/samples/lora1_sample_512_x2.png
-./src/samples/lora1_sample_512_x4.png
-```
+<p align="center">
+  <img src="src/samples/lora1_sample_512.jpeg" width="256">
+  <img src="src/samples/lora1_sample_512_x2.png" width="256">
+  <img src="src/samples/lora1_sample_512_x4.png" width="256">
+</p>
 
----
-
-### Video Super-Resolution
-
-**Input:**
-```
-./src/samples/sample.mp4
-```
-
-**Outputs:**
-```
-./src/samples/sample_x2.mp4
-./src/samples/sample_x4.mp4
-```
+<p align="center">
+  <em>Left: Original | Middle: x2 Upscaled | Right: x4 Upscaled</em>
+</p>
 
 ---
+
+### 🎥 Video Super-Resolution Results
+
+<p align="center">
+  <video src="src/samples/sample.mp4" controls width="300"></video>
+  <video src="src/samples/sample_x2.mp4" controls width="300"></video>
+  <video src="src/samples/sample_x4.mp4" controls width="300"></video>
+</p>
+
+<p align="center">
+  <em>Left: Original | Right: x2 Upscaled | Bottom: x4 Upscaled</em>
+</p>
+
 
 ## 📁 Folder Structure
 
