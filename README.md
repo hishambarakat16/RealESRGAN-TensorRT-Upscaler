@@ -181,15 +181,18 @@ python inference_video.py --input src/samples/input.mp4 --output src/samples/out
 
 ### 🎥 Video Super-Resolution Results
 
-<p align="center">
-  <video src="src/samples/sample.mp4" controls width="300"></video>
-  <video src="src/samples/sample_x2.mp4" controls width="300"></video>
-  <video src="src/samples/sample_x4.mp4" controls width="300"></video>
-</p>
+**Input:**  
+`src/samples/sample.mp4`
 
-<p align="center">
-  <em>Left: Original | Right: x2 Upscaled | Bottom: x4 Upscaled</em>
-</p>
+**Outputs:**  
+`src/samples/sample_x2.mp4`  
+`src/samples/sample_x4.mp4`
+
+To view the upscaled videos:
+
+➡️ [Download and play the original video](src/samples/sample.mp4)  
+➡️ [Download and play the 2x upscaled video](src/samples/sample_x2.mp4)  
+➡️ [Download and play the 4x upscaled video](src/samples/sample_x4.mp4)
 
 
 ## 📁 Folder Structure
